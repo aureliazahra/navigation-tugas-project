@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/widgets/drawer.dart';
 
 class Setting extends StatelessWidget {
   const Setting ({super.key});
@@ -10,6 +11,7 @@ class Setting extends StatelessWidget {
         title: const Text('Setting'),
         backgroundColor: const Color.fromARGB(255, 255, 159, 167),
       ),
+      drawer: const MyDrawer(),
       body: const Center(
         child: Text(
           'Ini halaman setting',

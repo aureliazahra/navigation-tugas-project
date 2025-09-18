@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/views/halaman_2.dart';
+import 'package:navigation/widgets/drawer.dart';
 
 class Halaman1 extends StatefulWidget {
   Halaman1({super.key});
@@ -19,6 +20,7 @@ class _Halaman1State extends State<Halaman1> {
         title: const Text("Halaman 1"),
         backgroundColor: const Color.fromARGB(255, 252, 215, 227),
       ),
+      drawer: const MyDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

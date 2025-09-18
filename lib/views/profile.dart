@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/widgets/drawer.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -10,6 +11,7 @@ class Profile extends StatelessWidget {
         title: const Text('Profile'),
         backgroundColor: const Color.fromARGB(255, 241, 159, 255),
       ),
+      drawer: const MyDrawer(),
       body: const Center(
         child: Text(
           'Ini halaman profile',
