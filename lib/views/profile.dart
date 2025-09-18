@@ -6,18 +6,8 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile'),
-        backgroundColor: const Color.fromARGB(255, 241, 159, 255),
-      ),
-      drawer: const MyDrawer(),
-      body: const Center(
-        child: Text(
-          'Ini halaman profile',
-          style: TextStyle(fontSize: 30),
-        ),
-      ),
+    return Center(
+      child: Text('Ini halaman profile', style: TextStyle(fontSize: 30)),
     );
   }
 }
