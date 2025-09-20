@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/widgets/drawer_navbar.dart';
 
 class ProfilePage extends StatelessWidget {
   final String username, email;
@@ -7,6 +8,13 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(135, 173, 255, 1),
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+      ),
+      drawer: const MyDrawer(),
       body: Center(
         child: Column(
           children: [
