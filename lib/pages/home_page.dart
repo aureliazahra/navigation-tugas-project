@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigation/widgets/data_container.dart';
+import 'package:navigation/widgets/health__container.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -59,6 +60,29 @@ class HomePage extends StatelessWidget {
                 Divider(
                   thickness: 1,
                   color: Colors.grey[300],
+                ),
+                const SizedBox(height: 15),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    HealthCard(
+                      icon: Icons.favorite,
+                      label: 'Heart Rate', 
+                      value: '78', 
+                      unit: 'bpm', 
+                      iconColor: Color.fromRGBO(112, 66, 201, 1.0),
+                      backgroundColor: Color.fromRGBO(112, 66, 201, 0.1),
+                      ),
+                      SizedBox(width: 30,),
+                      HealthCard(
+                      icon: Icons.flash_on,
+                      label: 'Exercise', 
+                      value: '24', 
+                      unit: 'min', 
+                      iconColor: Color.fromRGBO(206, 68, 187, 1.0), 
+                      backgroundColor: Color.fromRGBO(197, 74, 95, 0.102),
+                      ),
+                  ],
                 )
           ],
         ),
