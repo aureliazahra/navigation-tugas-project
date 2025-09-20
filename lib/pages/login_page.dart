@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/widgets/bottom_navbar.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -68,7 +69,9 @@ class LoginPage extends StatelessWidget {
               ),
               const Spacer(),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MyBottomNavbar(username: _controllerUsername.text, email: _contollerEmail.text)));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF87ADFF),
                   shape: RoundedRectangleBorder(

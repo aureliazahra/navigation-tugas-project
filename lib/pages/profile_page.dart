@@ -20,7 +20,7 @@ class ProfilePage extends StatelessWidget {
                   bottomRight: Radius.circular(20),
                 ),
               ),
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircleAvatar(
@@ -29,7 +29,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   SizedBox(height: 15),
                   Text(
-                    'John Doe',
+                    username.isEmpty ? 'John Doe' : username,
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -37,7 +37,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'johndoe.gmail.com',
+                    email.isEmpty ? 'johndoe.gmail.com' : email,
                     style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                 ],
