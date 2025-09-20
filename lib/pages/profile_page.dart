@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final String username, email;
+  const ProfilePage({super.key, required this.username, required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +57,12 @@ class ProfilePage extends StatelessWidget {
                     ),
                     child: const Row(
                       children: [
-                        Icon(Icons.favorite,
-                        color: Color(0xFFD2416E), size: 120,),
-                        SizedBox(width: 40,),
+                        Icon(
+                          Icons.favorite,
+                          color: Color(0xFFD2416E),
+                          size: 120,
+                        ),
+                        SizedBox(width: 40),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -71,9 +75,7 @@ class ProfilePage extends StatelessWidget {
                                 color: Color(0xFFD24166),
                               ),
                             ),
-                            SizedBox(
-                              height: 4,
-                            ),
+                            SizedBox(height: 4),
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
@@ -85,18 +87,18 @@ class ProfilePage extends StatelessWidget {
                                     color: Color(0xFFD24166),
                                   ),
                                 ),
-                                SizedBox(width: 4,),
+                                SizedBox(width: 4),
                                 Text(
                                   'npm',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    color: Color(0xFFD24166)
+                                    color: Color(0xFFD24166),
                                   ),
-                                )
+                                ),
                               ],
-                            )
+                            ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),

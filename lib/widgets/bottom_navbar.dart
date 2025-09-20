@@ -5,7 +5,12 @@ import '../pages/home_page.dart';
 import '../pages/profile_page.dart';
 
 class MyBottomNavbar extends StatefulWidget {
-  const MyBottomNavbar({super.key});
+  final String username, email;
+  const MyBottomNavbar({
+    super.key,
+    required this.username,
+    required this.email,
+  });
 
   @override
   State<MyBottomNavbar> createState() => _MyBottomNavbarState();
@@ -13,8 +18,16 @@ class MyBottomNavbar extends StatefulWidget {
 
 class _MyBottomNavbarState extends State<MyBottomNavbar> {
   int _selectedIndex = 0;
+  late final List<Widget> _pages;
 
-  final List<Widget> _pages = [const HomePage(), const ProfilePage()];
+  @override
+  void initState() {   // ✅ typo diperbaiki
+    super.initState();
+    _pages = [          // ✅ pakai List, bukan Set
+      HomePage(username: widget.username),
+      ProfilePage(username: widget.username, email: widget.email),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +37,32 @@ class _MyBottomNavbarState extends State<MyBottomNavbar> {
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
-            BoxShadow(
-              blurRadius: 20,
-              color: Colors.black.withOpacity(0.1)
-            )
+            BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(0.1)),
           ],
         ),
-        child: Padding(padding: const EdgeInsets.symmetric(vertical: 12),
-        child: GNav(tabs: const [
-          GButton(icon: Icons.home,
-          text: 'Home',),
-          GButton(icon: Icons.person, text: 'Profikle',)
-        ]),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          child: GNav(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            rippleColor: Colors.grey[300]!,
+            hoverColor: Colors.pinkAccent[100]!,
+            gap: 8,
+            activeColor: const Color.fromRGBO(135, 173, 255, 1), // ✅ 259 → 255
+            iconSize: 24,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            duration: const Duration(milliseconds: 300),
+            tabBackgroundColor: const Color.fromRGBO(135, 173, 255, 0.1), // ✅ 259 → 255
+            tabs: const [
+              GButton(icon: Icons.home, text: 'Home'),
+              GButton(icon: Icons.person, text: 'Profile'), // ✅ typo "Profikle"
+            ],
+            selectedIndex: _selectedIndex,
+            onTabChange: (index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
+          ),
         ),
       ),
     );

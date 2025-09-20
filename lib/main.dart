@@ -3,6 +3,7 @@ import 'package:navigation/pages/home_page.dart';
 import 'package:navigation/pages/login_page.dart';
 import 'package:navigation/pages/profile_page.dart';
 import 'package:navigation/views/halaman_1.dart';
+import 'package:navigation/widgets/bottom_navbar.dart';
 import 'package:navigation/widgets/bottom_navigation.dart'; 
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 243, 133, 225)),
       ),
       debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
+      home: LoginPage(),
     );
   }
 }

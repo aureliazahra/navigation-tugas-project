@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+  final TextEditingController _controllerUsername = TextEditingController();
+  final TextEditingController _contollerEmail = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -13,31 +15,34 @@ class LoginPage extends StatelessWidget {
             children: [
               const Text(
                 "Sign In",
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 30),
               TextFormField(
+                controller: _controllerUsername,
                 decoration: InputDecoration(
                   hintText: 'Username',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                   contentPadding: const EdgeInsets.symmetric(
-                      vertical: 20.0, horizontal: 15.0),
+                    vertical: 20.0,
+                    horizontal: 15.0,
+                  ),
                 ),
               ),
               const SizedBox(height: 15),
               TextFormField(
+                controller: _contollerEmail,
                 decoration: InputDecoration(
                   hintText: 'Email',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                   contentPadding: const EdgeInsets.symmetric(
-                      vertical: 20.0, horizontal: 15.0),
+                    vertical: 20.0,
+                    horizontal: 15.0,
+                  ),
                 ),
               ),
               const SizedBox(height: 15),
@@ -48,7 +53,9 @@ class LoginPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   contentPadding: const EdgeInsets.symmetric(
-                      vertical: 20.0, horizontal: 15.0),
+                    vertical: 20.0,
+                    horizontal: 15.0,
+                  ),
                 ),
               ),
               const SizedBox(height: 15),
@@ -73,10 +80,7 @@ class LoginPage extends StatelessWidget {
                 child: const Center(
                   child: Text(
                     'Sign In',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ),
               ),
@@ -84,31 +88,25 @@ class LoginPage extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: Divider(
-                      thickness: 1,
-                      color: Colors.grey[100],
-                    ),
+                    child: Divider(thickness: 1, color: Colors.grey[100]),
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text("OR"),
                   ),
                   Expanded(
-                    child: Divider(
-                      thickness: 1,
-                      color: Colors.grey[100],
-                    ),
+                    child: Divider(thickness: 1, color: Colors.grey[100]),
                   ),
                 ],
               ),
               const SizedBox(height: 15),
-              
+
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton.icon(
                   onPressed: () {},
                   icon: Image.asset(
-                    "assets/images/google.png", 
+                    "assets/images/google.png",
                     height: 24,
                     width: 24,
                   ),
